@@ -2,6 +2,7 @@ useDynLib("RcppTOML", .registration=TRUE)
 importFrom("Rcpp", "evalCpp")
 export("parseToml",
        "parseTOML",
-       "tomlparse")
+       "tomlparse",
+       "formatTOML")
 S3method("print", "toml")
 S3method("summary", "toml")
