@@ -3,7 +3,7 @@
 #include <Rcpp/Lightest>
 #include <toml11.hpp>
 
-toml_table_type toTOML(const Rcpp::List& data) {
+toml_value_type toTOML(const Rcpp::List& data) {
     toml_table_type tbl;
     Rcpp::CharacterVector dataNames = Rcpp::as<Rcpp::CharacterVector>(data.names());
     for (R_xlen_t i = 0; i < data.size(); ++i) {
@@ -33,14 +33,11 @@ toml_table_type toTOML(const Rcpp::List& data) {
             Rcpp::Rcout << "unknown type: " << el.sexp_type() << "\n";
         }
     }
-    return tbl;
+    return toml_value_type(tbl);
 }
 
 //' @noRd
 // [[Rcpp::export()]]
 Rcpp::String formatTOMLImpl(const Rcpp::List data) {
-    const toml_value_type tbl = toTOML(data);
-    std::stringstream strio;
-    strio << tbl;
-    return Rcpp::String(strio.str());
+    return Rcpp::String(toml::format(toTOML(data)));
 }
