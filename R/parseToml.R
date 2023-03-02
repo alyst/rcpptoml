@@ -22,7 +22,7 @@
 ##' Parse a TOML file
 ##'
 ##' The function \code{parseTOML}, also aliased to \code{tomlparse} and \code{parseToml},
-##' parse TOML content inout. This is usually a file given by its name, or a character variable
+##' parses TOML content input. This is usually a file given by its name, or a character variable
 ##' with a TOML expression.
 ##'
 ##' This implementation uses the \sQuote{tomlplusplus} library by Mark Gillar (see
