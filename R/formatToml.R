@@ -29,7 +29,9 @@
 ##' TOML 1.0 compliant.
 ##'
 ##' @param data [list] list of values to encode as TOML
+##' @param width [integer] maximum width of a line in TOML output,
+##'        affects array inlining
 ##' @return A TOML-formatted string
-formatTOML <- function(data) {
-    formatTOMLImpl(data)
+formatTOML <- function(data, width = 0L) {
+    formatTOMLImpl(data, width)
 }

@@ -38,6 +38,6 @@ toml_value_type toTOML(const Rcpp::List& data) {
 
 //' @noRd
 // [[Rcpp::export()]]
-Rcpp::String formatTOMLImpl(const Rcpp::List data) {
-    return Rcpp::String(toml::format(toTOML(data)));
+Rcpp::String formatTOMLImpl(const Rcpp::List data, std::size_t width) {
+    return Rcpp::String(toml::format(toTOML(data), width));
 }

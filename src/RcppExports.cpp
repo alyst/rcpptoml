@@ -11,13 +11,14 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
 // formatTOMLImpl
-Rcpp::String formatTOMLImpl(const Rcpp::List data);
-RcppExport SEXP _RcppTOML_formatTOMLImpl(SEXP dataSEXP) {
+Rcpp::String formatTOMLImpl(const Rcpp::List data, std::size_t width);
+RcppExport SEXP _RcppTOML_formatTOMLImpl(SEXP dataSEXP, SEXP widthSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const Rcpp::List >::type data(dataSEXP);
-    rcpp_result_gen = Rcpp::wrap(formatTOMLImpl(data));
+    Rcpp::traits::input_parameter< std::size_t >::type width(widthSEXP);
+    rcpp_result_gen = Rcpp::wrap(formatTOMLImpl(data, width));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -36,7 +37,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_RcppTOML_formatTOMLImpl", (DL_FUNC) &_RcppTOML_formatTOMLImpl, 1},
+    {"_RcppTOML_formatTOMLImpl", (DL_FUNC) &_RcppTOML_formatTOMLImpl, 2},
     {"_RcppTOML_tomlparseImpl", (DL_FUNC) &_RcppTOML_tomlparseImpl, 3},
     {NULL, NULL, 0}
 };

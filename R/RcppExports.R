@@ -2,8 +2,8 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 #' @noRd
-formatTOMLImpl <- function(data) {
-    .Call(`_RcppTOML_formatTOMLImpl`, data)
+formatTOMLImpl <- function(data, width) {
+    .Call(`_RcppTOML_formatTOMLImpl`, data, width)
 }
 
 #' @noRd

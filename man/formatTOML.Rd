@@ -4,10 +4,13 @@
 \alias{formatTOML}
 \title{Format data into a TOML string}
 \usage{
-formatTOML(data)
+formatTOML(data, width = 0L)
 }
 \arguments{
 \item{data}{[list] list of values to encode as TOML}
+
+\item{width}{[integer] maximum width of a line in TOML output,
+affects array inlining}
 }
 \value{
 A TOML-formatted string
