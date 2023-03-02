@@ -1,5 +1,5 @@
-##  RcppTomlPlusPlus -- Rcpp bindings to TOML via cpptomlplusplus
-##                      (based on earlier work in RcppTOML using cpptoml)
+##  RcppTomlPlusPlus -- Rcpp bindings to TOML via toml11
+##                      (based on earlier work in RcppTOML using cpptoml/toml++)
 ##
 ## Copyright (C) 2015 - 2023  Dirk Eddelbuettel
 ##
@@ -21,12 +21,14 @@
 
 ##' Format data into a TOML string
 ##'
-##' The function \code{formatTOML} formats given data (a list) into TOML-formatted string.
+##' The function \code{formatTOML} formats given data (a list) into
+##' TOML-formatted string.
 ##'
-##' This implementation uses the \sQuote{tomlplusplus} library by Mark Gillar (see
-##' \url{https://github.com/marzer/tomlplusplus}) which is TOML 1.0 compliant.
+##' This implementation uses the \sQuote{toml11} library by Toru Niina
+##' (see \url{https://github.com/ToruNiina/toml11}), which is
+##' TOML 1.0 compliant.
 ##'
-##' @param data [list] list of values
+##' @param data [list] list of values to encode as TOML
 ##' @return A TOML-formatted string
 formatTOML <- function(data) {
     formatTOMLImpl(data)

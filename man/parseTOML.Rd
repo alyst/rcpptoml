@@ -51,9 +51,6 @@ parses TOML content input. This is usually a file given by its name, or a charac
 with a TOML expression.
 }
 \details{
-This implementation uses the \sQuote{tomlplusplus} library by Mark Gillar (see
-\url{https://github.com/marzer/tomlplusplus}) which is TOML 1.0 compliant. In earlier
-work the package used the \sQuote{cpptoml} library by Chase Geigle (see
-\url{https://github.com/skystrife/cpptoml} for which development ceased once TOML 0.5.0
-parity was reached.
+This implementation uses the \sQuote{toml11} library by Toru Niina (see
+\url{https://github.com/ToruNiina/toml11}), which is TOML 1.0 compliant.
 }

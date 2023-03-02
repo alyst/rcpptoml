@@ -7,15 +7,17 @@
 formatTOML(data)
 }
 \arguments{
-\item{data}{[list] list of values}
+\item{data}{[list] list of values to encode as TOML}
 }
 \value{
 A TOML-formatted string
 }
 \description{
-The function \code{formatTOML} formats given data (a list) into TOML-formatted string.
+The function \code{formatTOML} formats given data (a list) into
+TOML-formatted string.
 }
 \details{
-This implementation uses the \sQuote{tomlplusplus} library by Mark Gillar (see
-\url{https://github.com/marzer/tomlplusplus}) which is TOML 1.0 compliant.
+This implementation uses the \sQuote{toml11} library by Toru Niina
+(see \url{https://github.com/ToruNiina/toml11}), which is
+TOML 1.0 compliant.
 }
