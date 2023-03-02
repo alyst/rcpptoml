@@ -18,11 +18,11 @@
 //  You should have received a copy of the GNU General Public License
 //  along with RcppTomlPlusPlus.  If not, see <http://www.gnu.org/licenses/>.
 
-void visitTable(const toml::table& tbl, const std::string& ind);
-void visitArray(const toml::array& arr, const std::string& ind);
-SEXP getTable(const toml::table& tbl, bool escape);
-SEXP getArray(const toml::array& array, bool escape);
-SEXP getValue(const toml::node& node, bool escape);
+#include "config.h"
+
+SEXP getTable(const toml_table_type& tbl, bool escape);
+SEXP getArray(const toml_array_type& array, bool escape);
+SEXP getValue(const toml_value_type& val, bool escape);
 
 // cf 'man timegm' for the workaround on non-Linux systems
 inline time_t local_timegm(struct tm *tm) {
